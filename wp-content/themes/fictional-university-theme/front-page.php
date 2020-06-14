@@ -70,7 +70,7 @@ front-page.php
 		</div>
 	</div>
 </div>
-
+ 
 <div class="hero-slider">
 	<div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('images/bus.jpg')?>);">
 		<div class="hero-slider__interior container">
