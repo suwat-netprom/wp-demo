@@ -44,33 +44,33 @@ front-page.php
 	<div class="full-width-split__two">
 		<div class="full-width-split__inner">
 			<h2 class="headline headline--small-plus t-center">From Our Blogs</h2>
+            <?php
+            $homepagePosts = new WP_Query(array(
+	            'posts_per_page' => 2,
+                //'category_name' => 'award',
+                //'post_type' => 'page'
+            ));
 
-			<div class="event-summary">
-				<a class="event-summary__date event-summary__date--beige t-center" href="#">
-					<span class="event-summary__month">Jan</span>
-					<span class="event-summary__day">20</span>
-				</a>
-				<div class="event-summary__content">
-					<h5 class="event-summary__title headline headline--tiny"><a href="#">We Were Voted Best School</a></h5>
-					<p>For the 100th year in a row we are voted #1. <a href="#" class="nu gray">Read more</a></p>
-				</div>
-			</div>
-			<div class="event-summary">
-				<a class="event-summary__date event-summary__date--beige t-center" href="#">
-					<span class="event-summary__month">Feb</span>
-					<span class="event-summary__day">04</span>
-				</a>
-				<div class="event-summary__content">
-					<h5 class="event-summary__title headline headline--tiny"><a href="#">Professors in the National Spotlight</a></h5>
-					<p>Two of our professors have been in national news lately. <a href="#" class="nu gray">Read more</a></p>
-				</div>
-			</div>
+            while ($homepagePosts->have_posts()){
+                $homepagePosts->the_post();?>
+                <div class="event-summary">
+                    <a class="event-summary__date event-summary__date--beige t-center" href="#">
+                        <span class="event-summary__month"><?php ?></span>
+                        <span class="event-summary__day">20</span>
+                    </a>
+                    <div class="event-summary__content">
+                        <h5 class="event-summary__title headline headline--tiny"><a href="#">We Were Voted Best School</a></h5>
+                        <p>For the 100th year in a row we are voted #1. <a href="#" class="nu gray">Read more</a></p>
+                    </div>
+                </div>
+            <?php }
+            ?>
 
 			<p class="t-center no-margin"><a href="#" class="btn btn--yellow">View All Blog Posts</a></p>
 		</div>
 	</div>
 </div>
- 
+
 <div class="hero-slider">
 	<div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('images/bus.jpg')?>);">
 		<div class="hero-slider__interior container">
